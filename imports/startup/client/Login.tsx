@@ -40,7 +40,7 @@ export default class Login extends React.Component<LoginProps, LoginState> {
   makeForm = ({ handleSubmit, submitting, pristine }) => {
     return (
       <form onSubmit={handleSubmit}>
-        <JFlexGroup width="600px" direction="row" gutterSize="s">
+        <JFlexGroup width="500px" direction="row" gutterSize="s">
           <JFlexItem><EInput name="email" type="email" placeholder="Email" /></JFlexItem>
           <JFlexItem><EInput name="password" type="password" placeholder="Passowrd" /></JFlexItem>
           <JFlexItem width="100px"><EuiButton type="submit" disabled={submitting || pristine}>Login</EuiButton></JFlexItem>
@@ -55,10 +55,10 @@ export default class Login extends React.Component<LoginProps, LoginState> {
         <JPageBody padding="50px 0 0 0">
           <JPageContent verticalPosition="center" horizontalPosition="center">
             <JPageContentHeader>
-              <JTitle textalign="center"><h1>Chart Recommnedation Service Login</h1></JTitle>
+              <JTitle textalign="center"><h1>Chart Recommnedation Service</h1></JTitle>
             </JPageContentHeader>
             <JPageContentBody>
-              <JRow justify="center"><img style={{width:'500px', height:'300px'}} src="./images/data2vis.png" /></JRow>
+              <JRow justify="center"><img style={{width:'400px', height:'200px'}} src="./images/data2vis.png" /></JRow>
               <JRow>{this.state.error ? <p>{this.state.error} </p> : undefined}</JRow>
               <JRow><Form onSubmit={this.onLogin} render={this.makeForm} /></JRow>
               <JRow padding="20px 5px"><Link to="/signup">Have a account?</Link></JRow >
