@@ -9,6 +9,7 @@ import Signup from './Signup';
 import InfoContainer from '../../client/Info';
 import NotFound from './NotFound';
 import store, { browserHistory } from './store';
+import ChartLayout from '../../client/layouts/Chart.layout';
 
 export const Root = (
   <Provider store={store}>
@@ -18,6 +19,7 @@ export const Root = (
         <Route path="/main" component={App} />
         <Route path="/signup" component={Signup} />
         <Route path="/links" component={InfoContainer} />
+        <Route path="/chart" component={ChartLayout} />
         <Route path="*" component={NotFound} />
       </Switch>
     </ConnectedRouter>
@@ -30,7 +32,7 @@ export const authenticated = (isAuthenticated) => {
     const unauthenticatedPages: any = ['/', '/signup'];
     const isUnauthenticatedPage = unauthenticatedPages.includes(pathname);
     if (isUnauthenticatedPage) {
-      browserHistory.push('/links'); // main
+      browserHistory.push('/chart'); // main
     } else {
       browserHistory.push(pathname);
     }

@@ -7,6 +7,7 @@ import {
   EuiPageContentBody,
   EuiPageContentHeader,
   EuiPageContentHeaderSection,
+  EuiPageSideBar,
   EuiTitle 
 } from '@elastic/eui';
 
@@ -39,6 +40,13 @@ export const JPageContentHeader= styled(EuiPageContentHeader)`
 export const JPageContentHeaderSection = styled(EuiPageContentHeaderSection)`
   width: ${props => props.width || '100%'};
   height: ${props => props.height || '100%'};
+`;
+
+export const JPageSideBar = styled(EuiPageSideBar)`
+  height: ${props => props.height || '100%'};
+  min-width: ${props => props.width || '190px !important'};
+  margin-right: 10px !important;
+  visibility: ${props => props.visibility || 'visible'};
 `;
 
 export const JTitle = styled(EuiTitle)`
