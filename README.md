@@ -1,6 +1,6 @@
 
 # Chart Recommendation Service
-  - Vega-lite기반의 Voyager를 재해석하여 개발한다.
+  - Re-development Voyager based on Vega-lite. We call it Lime(라임).
   - Voyager Concept
     - https://vis3040.tistory.com/8
     - https://vis3040.tistory.com/9
