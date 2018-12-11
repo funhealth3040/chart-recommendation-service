@@ -1,4 +1,12 @@
-# react-meteor-redux-eui-boilerplate
+
+# Chart Recommendation Service
+  - Vega-lite기반의 Voyager를 재해석하여 개발한다.
+  - Voyager Concept
+    - https://vis3040.tistory.com/8
+    - https://vis3040.tistory.com/9
+
+
+# Tech Stack
 React, Meteor, Redux Observable, Elastic UI, SCSS, Final Form Boilerplate
   - https://reactjs.org/
   - https://www.meteor.com/
