@@ -2,9 +2,9 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { addLink } from './link.action';
 import { Form } from 'react-final-form';
-import EInput from '../../sdk/eui/eui-final-input';
+import EInput from '../../sdk/forms/eui-final-input';
 import { EuiButton } from '@elastic/eui';
-import { JFlexItem, JFlexGroup } from '../../sdk/eui/flexgroup.style';
+import { JFlexItem, JFlexGroup } from '../../sdk/styles/eui-flexgroup.style';
 
 export interface AddLinkProps {
   addLink: Function;

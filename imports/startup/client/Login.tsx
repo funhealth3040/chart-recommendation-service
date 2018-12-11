@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Form } from 'react-final-form';
-import { EuiButton, EuiFlexItem } from '@elastic/eui';
-import EInput from '../../client/sdk/eui/eui-final-input';
-import { JFlexItem, JFlexGroup } from '../../client/sdk/eui/flexgroup.style';
-import { JPage, JRow } from '../../client/layouts/common.style';
+import { EuiButton } from '@elastic/eui';
+import EInput from '../../client/sdk/forms/eui-final-input';
+import { JFlexItem, JFlexGroup } from '../../client/sdk/styles/eui-flexgroup.style';
+import { JRow, JPage, JPageBody, JPageContent, JPageContentHeader, JTitle, JPageContentBody } from '../../client/sdk';
 
 export interface LoginProps {
   history: any;
@@ -52,10 +52,19 @@ export default class Login extends React.Component<LoginProps, LoginState> {
   public render() {
     return (
       <JPage>
-        <JRow padding="10px" fontSize="20px">Login to short Link</JRow>
-        <JRow>{this.state.error ? <p>{this.state.error} </p> : undefined}</JRow>
-        <JRow><Form onSubmit={this.onLogin} render={this.makeForm} /></JRow>
-        <JRow><Link to="/signup">Have a account?</Link></JRow >
+        <JPageBody padding="50px 0 0 0">
+          <JPageContent verticalPosition="center" horizontalPosition="center">
+            <JPageContentHeader>
+              <JTitle textalign="center"><h1>Chart Recommnedation Service Login</h1></JTitle>
+            </JPageContentHeader>
+            <JPageContentBody>
+              <JRow justify="center"><img style={{width:'500px', height:'300px'}} src="./images/data2vis.png" /></JRow>
+              <JRow>{this.state.error ? <p>{this.state.error} </p> : undefined}</JRow>
+              <JRow><Form onSubmit={this.onLogin} render={this.makeForm} /></JRow>
+              <JRow padding="20px 5px"><Link to="/signup">Have a account?</Link></JRow >
+            </JPageContentBody>
+          </JPageContent>
+        </JPageBody>
       </JPage>
     );
   }

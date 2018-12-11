@@ -2,7 +2,7 @@ import * as React from 'react';
 import { removeLink } from './link.action';
 import { connect } from 'react-redux';
 import { EuiButton } from '@elastic/eui';
-import { JRow } from '../../layouts/common.style';
+import { JRow } from '../../sdk/styles/common.style';
 
 export interface LinkProps {
   link: any,

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Accounts } from 'meteor/accounts-base'
 import { Form } from 'react-final-form';
 import { EuiButton } from '@elastic/eui';
-import EInput from '../../client/sdk/eui/eui-final-input';
-import { JFlexGroup, JFlexItem } from '../../client/sdk/eui/flexgroup.style';
-import { JRow, JPage } from '../../client/layouts/common.style';
+import EInput from '../../client/sdk/forms/eui-final-input';
+import { JFlexGroup, JFlexItem } from '../../client/sdk/styles/eui-flexgroup.style';
+import { JRow, JPage } from '../../client/sdk';
 
 export interface SignupProps {
 }
