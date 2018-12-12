@@ -14,6 +14,7 @@ import {
 export const JPage = styled(EuiPage)`
   width: ${props => props.width || '100%'};
   height: ${props => props.height || '100%'};
+  padding: ${props => props.padding || '0px !important'};
 `;
 
 export const JPageBody = styled(EuiPageBody)`
@@ -45,8 +46,9 @@ export const JPageContentHeaderSection = styled(EuiPageContentHeaderSection)`
 export const JPageSideBar = styled(EuiPageSideBar)`
   height: ${props => props.height || '100%'};
   min-width: ${props => props.width || '190px !important'};
-  margin-right: 10px !important;
+  margin-right: 0px !important;
   visibility: ${props => props.visibility || 'visible'};
+  border: 1px solid grey;
 `;
 
 export const JTitle = styled(EuiTitle)`

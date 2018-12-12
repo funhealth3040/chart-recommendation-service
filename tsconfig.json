@@ -6,6 +6,7 @@
     "moduleResolution": "node",
     "types": [
       "node"
-    ]
+    ],
+    "allowSyntheticDefaultImports": true
   }
 }

@@ -1,76 +1,43 @@
 import * as React from 'react';
-import { EuiHeader, EuiHeaderSection } from '@elastic/eui/lib/components/header';
-import { JPage, JPageSideBar, JRow, JPageContent, JPageContentBody } from '../sdk';
+import classnames from 'classnames';
+import './chart.layout.scss';
+import { ChartBody } from './Chart.layout.style';
+const ResizeObserver = require('resize-observer-polyfill');
 
 export interface ChartLayoutState {
-  widthData: string;
-  widthConfig: string;
+  height: string;
 }
 class ChartLayout extends React.Component<{}, ChartLayoutState> {
 
   constructor(props: any) {
     super(props);
     this.state = {
-      widthData: '190px !important',
-      widthConfig: '190px !important'
+      height: (window.innerHeight - 50) + 'px'
     };
+    const ro = new ResizeObserver((entries: any, observer: any) => {
+      for (const entry of entries) {
+        const { left, top, width, height } = entry.contentRect;
+        // console.log('Element:', entry.target);
+        // console.log(`Element's size: ${width}px x ${height}px`);
+        // console.log(`Element's paddings: ${top}px ; ${left}px`);
+        this.setState({
+          height: (window.innerHeight - 50) + 'px'
+        })
+      }
+    });
+    ro.observe(document.body);
   }
-
-  toggleData = () => {
-    if (this.state.widthData.indexOf('190px') >= 0) {
-      this.setState({
-        widthData: '20px !important'
-      });
-    } else {
-      this.setState({
-        widthData: '190px !important'
-      });
-    }
-  };
-
-  toggleConfig = () => {
-    if (this.state.widthConfig.indexOf('190px') >= 0) {
-      this.setState({
-        widthConfig: '20px !important'
-      });
-    } else {
-      this.setState({
-        widthConfig: '190px !important'
-      });
-    }
-  };
 
   render() {
     return (
-      <React.Fragment>
-        <EuiHeader>
-          <EuiHeaderSection grow={false}>
-          </EuiHeaderSection>
-        </EuiHeader>
-        <JPage>
-          <JPageSideBar 
-            onClick={this.toggleData} 
-            width={this.state.widthData}
-          >
-            <JRow>
-              menu 1
-            </JRow>
-          </JPageSideBar>
-          <JPageSideBar
-            onClick={this.toggleConfig}
-            width={this.state.widthConfig}
-          > 
-            <JRow>
-              menu 2
-            </JRow>
-          </JPageSideBar>
-          <JPageContent>
-            <JPageContentBody>
-              page content body
-            </JPageContentBody>
-          </JPageContent>
-        </JPage>
-      </React.Fragment>
+      <div className={classnames('chart-layout', {'main': true})}>
+        <div className="header">header</div>
+        <ChartBody className="body" height={this.state.height}>
+          <div className="sidebar-1">side-1</div>
+          <div className="sidebar-2">side-2</div>
+          <div className="content">content</div>
+        </ChartBody>
+      </div>
     );
   }
 }

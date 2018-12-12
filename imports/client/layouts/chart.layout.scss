@@ -1,0 +1,43 @@
+.chart-layout {
+  &.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+  }
+  .header {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    background: grey;
+  }
+  .body {
+    display: flex;
+    margin-top: 50px;
+    overflow: auto;
+    background: green;
+    .sidebar-1 {
+      display: flex;
+    padding: 10px;
+      width: 160px;
+      height: 100%;
+      background: yellow;
+    }
+    .sidebar-2 {
+      display: flex;
+    padding: 10px;
+      width: 160px;
+      height: 100%;
+      background: yellowgreen;
+    }
+    .content {
+      display: flex;
+    padding: 10px;
+      width: calc(100% - 320px);
+      height: 100%;
+    }
+  }
+}
