@@ -15,15 +15,12 @@ class ChartLayout extends React.Component<{}, ChartLayoutState> {
       height: (window.innerHeight - 50) + 'px'
     };
     const ro = new ResizeObserver((entries: any, observer: any) => {
-      for (const entry of entries) {
-        const { left, top, width, height } = entry.contentRect;
-        // console.log('Element:', entry.target);
-        // console.log(`Element's size: ${width}px x ${height}px`);
-        // console.log(`Element's paddings: ${top}px ; ${left}px`);
-        this.setState({
-          height: (window.innerHeight - 50) + 'px'
-        })
-      }
+      // for (const entry of entries) {
+      //   const { left, top, width, height } = entry.contentRect;
+      // }
+      this.setState({
+        height: (window.innerHeight - 50) + 'px'
+      });
     });
     ro.observe(document.body);
   }
